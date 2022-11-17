@@ -2,7 +2,8 @@ import * as React from 'react';
 import NumberBtn from './NumberBtn';
 
 export interface INumbersProps {
-  handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  handleClick: (value: any, state: number) => void;
+  displayValue: any;
 }
 
 export default function Numbers (props: INumbersProps) {
@@ -12,6 +13,7 @@ export default function Numbers (props: INumbersProps) {
     return <NumberBtn
       value= { num }
       handleClick={props.handleClick} 
+      displayValue={props.displayValue}
     />
   })
   return (
