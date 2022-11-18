@@ -2,7 +2,7 @@ import * as React from 'react';
 import NumberBtn from './NumberBtn';
 
 export interface INumbersProps {
-  handleClick: (value: any, state: number) => void;
+  handleNumbers: (num: number) => void;
   displayValue: any;
 }
 
@@ -12,7 +12,7 @@ export default function Numbers (props: INumbersProps) {
   const numBtns = nums.map(num => {
     return <NumberBtn
       value= { num }
-      handleClick={props.handleClick} 
+      handleNumbers={props.handleNumbers} 
       displayValue={props.displayValue}
     />
   })

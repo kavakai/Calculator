@@ -7,13 +7,6 @@
   align-items: center;
 }
 
-.btn-container {
-  width: inherit;
-  display: grid;
-  grid-template-columns: repeat(3, 2fr);
-  justify-items: center;
-}
-
 .screen-display {
   width: inherit;
   height: 40px;
@@ -44,3 +37,25 @@ button {
   margin: 10px;
 }
 
+.all-btns {
+  grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  grid-auto-flow: row;
+}
+
+.fnct-btns {
+  display: flex;
+}
+
+.zero-clear-btns > button {
+  height: 100px;
+  grid-area: 1 / col4-start / last-line / 6;
+}
+
+.btn-container {
+  width: inherit;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 90px 90px ;
+  justify-items: center;
+}

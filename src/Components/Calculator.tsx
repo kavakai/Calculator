@@ -2,7 +2,8 @@ import * as React from 'react';
 import Numbers from './Numbers';
 
 export interface IAppProps {
- handleClick: (value: any, state: number) => void;
+ handleNumbers: (num: number) => void;
+ calculate: (value: string) => void;
  displayValue: any;
  setDisplayValue: (value: any) => void;
 }
@@ -12,14 +13,17 @@ export default function Calculator (props: IAppProps) {
     <div className='whole-calculator'>
       <div id="screen" className='screen-display' data-role={"display"}>{props.displayValue}</div>
       <div className='all-btns'>
-        <Numbers handleClick={props.handleClick} displayValue={props.displayValue}/>
-        <button onClick={() => props.handleClick(0, props.displayValue)} value={0}>0</button>
+        <Numbers handleNumbers={props.handleNumbers} displayValue={props.displayValue}/>
+        <div className='zero-clear-btns'>
+          <button onClick={() => props.handleNumbers(0)} value={0}>0</button>
+          <button onClick={() => props.calculate("c")} value={"c"}>C</button>
+          <button onClick={() => props.calculate("=")} value={"="}>=</button>
+        </div>
         <div className='fnct-btns'>
-          <button onClick={() => props.handleClick("+", props.displayValue)} value={"+"}>+</button>
-          <button onClick={() => props.handleClick("-", props.displayValue)} value={"-"}>-</button>
-          <button onClick={() => props.handleClick("*", props.displayValue)} value={"*"}>*</button>
-          <button onClick={() => props.handleClick("/", props.displayValue)} value={"/"}>/</button>
-          <button onClick={() => props.handleClick("=", props.displayValue)} value={"="}>=</button>
+          <button onClick={() => props.calculate("+")} value={"+"}>+</button>
+          <button onClick={() => props.calculate("-")} value={"-"}>-</button>
+          <button onClick={() => props.calculate("*")} value={"*"}>*</button>
+          <button onClick={() => props.calculate("/")} value={"/"}>/</button>
         </div>
       </div>
     </div>
