@@ -4,30 +4,31 @@ import Calculator from './Components/Calculator';
 import './css.css'
 
 function App() {
-  const [displayValue, setDisplayValue] = useState<number>(0);
-  const [currentValue, setCurrentValue] = useState<number>(0);
-  const [sum, setSum] = useState<number>(0);
+  const [displayValue, setDisplayValue] = useState<any>(0);
 
   const handleNumbers = (num: number) => {
-    console.log(num, "numbers")
+    if(displayValue === 0 && num !== 0) {
+      setDisplayValue(num);
+    } else {
+      setDisplayValue(`${displayValue}${num}`);
+    }
   }
+    
   
   const calculate = (value: string) => {
-    console.log(value, "calc")
-
-    // if(value === "+") {
-     
-    // } else if(value === "-") {
-      
-    // } else if(value === "*") {
-      
-    // } else if(value === "/") {
-      
-    // } else if(value === "=") {
-     
-    // } else if(value === "c") {
-
-    // }
+    if(value === "+") {
+      setDisplayValue(`${displayValue}${value}`)
+    } else if(value === "-") {
+      setDisplayValue(`${displayValue}${value}`)
+    } else if(value === "*") {
+      setDisplayValue(`${displayValue}${value}`)
+    } else if(value === "/") {
+      setDisplayValue(`${displayValue}${value}`)
+    } else if(value === "=") {
+      setDisplayValue(eval(displayValue))
+    } else if(value === "c") {
+      setDisplayValue(0)
+    }
   } 
 
   return (
