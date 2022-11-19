@@ -5,7 +5,6 @@ export interface IAppProps {
  handleNumbers: (num: number) => void;
  calculate: (value: string) => void;
  displayValue: any;
- setDisplayValue: (value: any) => void;
 }
 
 export default function Calculator (props: IAppProps) {

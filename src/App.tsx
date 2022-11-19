@@ -1,9 +1,9 @@
-import { sign } from 'crypto';
 import React, { useState } from 'react';
 import Calculator from './Components/Calculator';
 import './css.css'
 
 function App() {
+  
   const [displayValue, setDisplayValue] = useState<any>(0);
 
   const handleNumbers = (num: number) => {
@@ -12,8 +12,7 @@ function App() {
     } else {
       setDisplayValue(`${displayValue}${num}`);
     }
-  }
-    
+  } 
   
   const calculate = (value: string) => {
     if(value === "+") {
@@ -38,7 +37,6 @@ function App() {
         calculate={calculate} 
         handleNumbers={handleNumbers}
         displayValue={displayValue} 
-        setDisplayValue={setDisplayValue}
       />
     </div>
   );
