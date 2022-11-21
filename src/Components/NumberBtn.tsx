@@ -3,7 +3,6 @@ import * as React from 'react';
 export interface INumberBtnProps {
   value: number; 
   handleNumbers: (num: number) => void;
-  displayValue: any;
 }
 
 export default function NumberBtn (props: INumberBtnProps) {

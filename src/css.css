@@ -1,3 +1,12 @@
+html {
+  background-color: rgb(46, 44, 44);
+}
+
+h1 {
+  color: rgb(232, 226, 226);
+  margin-bottom: 60px;
+}
+
 .App {
   display: flex;
   flex-direction: column;
@@ -9,24 +18,27 @@
 
 .screen-display {
   width: inherit;
-  height: 40px;
+  height: 53px;
   border: solid 1px gray;
   border-radius: 5px;
   background-color: lightgrey;
   text-align: right;
-  font-size: xx-large;
+  font-size: xxx-large;
+  padding-right: 10px;
+  box-shadow: 2px 2px 6px black;
 }
 
 .whole-calculator {
   width: 25vw;
-  height: 50vh;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: darkgray;
   border-radius: 15px;
-  padding: 20px;
+  padding: 30px;
+  box-shadow: 0 0 10px 10px rgb(232, 226, 226);
 }
 
 button {
@@ -38,9 +50,11 @@ button {
 }
 
 .all-btns {
-  grid-template-columns: repeat(2, 1fr);
+  margin-top: 3em;
   display: grid;
-  grid-auto-flow: row;
+  grid-template-columns: [first] 2fr [line2] auto;
+  grid-template-rows: [first] 73%;
+  height: 50vh;
 }
 
 .fnct-btns {

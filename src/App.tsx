@@ -3,7 +3,6 @@ import Calculator from './Components/Calculator';
 import './css.css'
 
 function App() {
-  
   const [displayValue, setDisplayValue] = useState<any>(0);
 
   const handleNumbers = (num: number) => {
@@ -15,18 +14,12 @@ function App() {
   } 
   
   const calculate = (value: string) => {
-    if(value === "+") {
-      setDisplayValue(`${displayValue}${value}`)
-    } else if(value === "-") {
-      setDisplayValue(`${displayValue}${value}`)
-    } else if(value === "*") {
-      setDisplayValue(`${displayValue}${value}`)
-    } else if(value === "/") {
-      setDisplayValue(`${displayValue}${value}`)
-    } else if(value === "=") {
-      setDisplayValue(eval(displayValue))
-    } else if(value === "c") {
+    if(value === "="){
+      setDisplayValue(eval(displayValue).toFixed(12))
+    }else if(value === "c") {
       setDisplayValue(0)
+    } else {
+      setDisplayValue(`${displayValue}${value}`)
     }
   } 
 

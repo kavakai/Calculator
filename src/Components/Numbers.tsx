@@ -13,9 +13,9 @@ export default function Numbers (props: INumbersProps) {
     return <NumberBtn
       value= { num }
       handleNumbers={props.handleNumbers} 
-      displayValue={props.displayValue}
     />
-  })
+  });
+
   return (
     <div className='btn-container'>
       { numBtns }
