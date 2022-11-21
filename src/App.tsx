@@ -15,7 +15,11 @@ function App() {
   
   const calculate = (value: string) => {
     if(value === "="){
-      setDisplayValue(eval(displayValue).toFixed(12))
+      if(eval(displayValue).toString().length >= 7) {
+        setDisplayValue(eval(displayValue).toFixed(11));
+      } else {
+        setDisplayValue(eval(displayValue));
+      }
     }else if(value === "c") {
       setDisplayValue(0)
     } else {
